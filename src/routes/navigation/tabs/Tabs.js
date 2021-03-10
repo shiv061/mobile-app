@@ -2,6 +2,7 @@ import React from 'react'
 import { View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { colors } from 'theme'
+import Svg from '../../../components/Svg'
 
 // stack navigators
 import { HomeNavigator, ProfileNavigator } from '../stacks'
@@ -15,9 +16,13 @@ const TabNavigator = () => (
       tabBarIcon: ({ focused }) => {
         switch (route.name) {
           case 'Home':
-            return
-          case 'Profile':
-            return
+            return <Svg name="down" width={20} height={20} />
+          case 'Search':
+            return <Svg name="home" width={20} height={20} />
+          case 'Setting':
+            return <Svg name="search" width={20} height={20} />
+          case 'Download':
+            return <Svg name="setting" width={20} height={20} />
           default:
             return <View />
         }
@@ -28,18 +33,18 @@ const TabNavigator = () => (
       inactiveTintColor: colors.gray,
       showLabel: false,
       style: {
-        backgroundColor: 'white',
-        borderTopColor: 'gray',
+        backgroundColor: 'rgba(0,0,0,0.7)',
         borderTopWidth: 0,
-        paddingBottom: 5,
-        paddingTop: 5,
+        position: 'absolute',
       },
     }}
     initialRouteName="Home"
     swipeEnabled={false}
   >
     <Tab.Screen name="Home" component={HomeNavigator} />
-    <Tab.Screen name="Profile" component={ProfileNavigator} />
+    <Tab.Screen name="Search" component={ProfileNavigator} />
+    <Tab.Screen name="Setting" component={ProfileNavigator} />
+    <Tab.Screen name="Download" component={ProfileNavigator} />
   </Tab.Navigator>
 )
 

@@ -46,6 +46,7 @@ export const HomeNavigator = () => (
         title: 'Home',
         headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
+        headerShown: false,
       })}
     />
   </Stack.Navigator>
