@@ -36,6 +36,7 @@ const TabNavigator = () => (
         backgroundColor: 'rgba(0,0,0,0.7)',
         borderTopWidth: 0,
         position: 'absolute',
+        display: 'none',
       },
     }}
     initialRouteName="Home"
